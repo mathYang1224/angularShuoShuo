@@ -1,0 +1,58 @@
+.alert{
+	padding: 6px 10px;
+	margin-top: 10px;
+}
+form[name="registform"]>.row{
+	margin-top: 10px;
+}
+.nav-tabs a{
+	cursor: pointer;
+}
+.tab-content>div{
+	padding-top: 20px;
+}
+.tab-content>div .row{
+	margin-top: 10px;
+}
+.mask_profile{
+	background-color: rgba(0,0,0,0.7);
+	width:100%;
+	height:100%;
+	position: fixed;
+	top: 0;
+	left:0;
+}
+.inner_box{
+	position: fixed;
+	top: 50%;
+	left:50%;
+	width: 850px;
+	height: 480px;
+	background-color: white;
+	transform:translate(-50%,-50%);
+	border-radius: 10px;
+	padding: 20px;
+}
+
+.mask_close{
+	position: absolute;
+	right:-15px;
+	top: -15px;
+	width:30px;
+	height:30px;
+	background-color: #FFC107;
+	text-align: center;
+	line-height: 30px;
+	font-size: 30px;
+	border-radius: 50%;
+}
+.mask_close:hover{
+	text-decoration: none;
+}
+
+.cutBtn{
+	position: absolute;
+	bottom: 30px;
+	right: 40px;
+	padding: 10px 53px;
+}

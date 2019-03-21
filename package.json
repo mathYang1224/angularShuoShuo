@@ -1,0 +1,19 @@
+{
+  "name": "project_shuoshuo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "formidable": "^1.1.1",
+    "gm": "^1.23.0",
+    "mongodb": "^2.2.25",
+    "mongoose": "^4.9.4"
+  }
+}

@@ -1,0 +1,41 @@
+<div>
+	<div class="container">
+		<h1>登录</h1>
+		<hr>
+
+		<div class="row">
+			<div class="col-lg-8">
+				<form name="loginform">
+					<div class="row">
+						<div class="col-lg-6">
+							<p>
+								请输入Email地址：
+							</p>
+							<input type="text" required class="form-control" name="email" ng-model="loginctrl.formobj.email" ng-pattern="/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/" ng-focus="loginctrl.showerrtip=false">
+
+							<p class="alert alert-danger" ng-show="loginform.email.$invalid && loginform.email.$dirty">请输入正确的Email地址</p>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-6">
+							<p>
+								请输入密码：
+							</p>
+							<input type="password" required class="form-control" ng-model="loginctrl.formobj.password"  ng-focus="loginctrl.showerrtip=false">
+						</div>
+					</div>
+ 
+					<div class="row">
+						<div class="col-lg-6">
+							<p class="alert alert-danger" ng-show="loginctrl.showerrtip">{{loginctrl.errtip}}</p>
+							<p style="margin-top:10px;">
+								<input type="button" class="btn btn-success" value="登录" ng-click="loginctrl.login()">
+							</p>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

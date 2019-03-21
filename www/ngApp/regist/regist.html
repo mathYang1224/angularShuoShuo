@@ -1,0 +1,54 @@
+<div>
+	<div class="container">
+		<h1>注册</h1>
+		<hr>
+
+		<div class="row">
+			<div class="col-lg-8">
+				<form name="registform">
+					<div class="row">
+						<div class="col-lg-6">
+							<p>邮箱地址：</p>
+							<div>
+								<input type="text" required class="form-control" name="email" ng-model="registctrl.registformobj.email" ng-pattern="/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/" ng-blur="registctrl.checkEmail()" ng-focus="registctrl.showEmailErrTip=false" />
+
+								<!-- 下面这个alert框又是danger提示，又是success提示 -->
+								<div class="alert {{registctrl.emailTipType}} alert-small" ng-show="registctrl.showEmailErrTip" >{{ registctrl.emailErrTip }}</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-6">
+							<p>密码：</p>
+							<div>
+								<input type="password" required class="form-control" name="password" ng-model="registctrl.registformobj.password" ng-blur="registctrl.checkStrength();registctrl.checkpasswordunsame()" ng-focus="registctrl.showStrengthErrTip=false" />
+
+								<div class="alert alert-danger alert-small" ng-show="registctrl.showStrengthErrTip">密码强度不够，至少是“中”</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<password-strength-bar strength="{{registctrl.getStrength()}}"></password-strength-bar>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-6">
+							<p>确认密码：</p>
+							<div>
+								<input type="password" required class="form-control" name="password2" ng-model="registctrl.registformobj.password2" ng-blur="registctrl.checkpasswordunsame()" ng-focus="registctrl.showunsametip=false" />
+
+								<div class="alert alert-danger alert-small" ng-show="registctrl.showunsametip" >两次输入的密码不相同</div>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<p style="margin-top:10px;">
+							<input type="button" class="btn btn-success" value="确认注册" ng-disabled="registform.$invalid || registctrl.getStrength()< 2 || registctrl.registformobj.password != registctrl.registformobj.password2" ng-click="registctrl.doRegist()"></p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

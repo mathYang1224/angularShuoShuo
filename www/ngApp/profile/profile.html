@@ -1,0 +1,76 @@
+<div>
+	<div class="container">
+		<h1>个人资料修改</h1>
+		<hr>
+
+		<div>
+			<!-- 选项卡 -->
+			<ul class="nav nav-tabs">
+				<li class="{{profilectrl.idx == 0 ? 'active' : ''}}"><a ng-click="profilectrl.changeTab(0)">基本信息修改</a></li>
+				<li class="{{profilectrl.idx == 1 ? 'active' : ''}}"><a ng-click="profilectrl.changeTab(1)">密码修改</a></li>
+			</ul>
+			<div class="tab-content">
+				<div ng-if="profilectrl.idx == 0">
+					<form action="">
+						<div class="row">
+							<div class="col-lg-6">
+								<p>邮箱地址（不许更改）</p>
+								<div>
+									<input type="text" disabled class="form-control" ng-model="profilectrl.formobj.email">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<p>昵称</p>
+								<div>
+									<input type="text"  class="form-control" ng-model="profilectrl.formobj.nickname">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<p>一句话签名</p>
+								<div>
+									<input type="text"  class="form-control" ng-model="profilectrl.formobj.signature">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<p>头像更改</p>
+								<div class="col-lg-3">
+									<img src="{{profilectrl.getAvatar()}}"  >
+								</div>
+								<div  class="col-lg-6">
+									<input type="file" nv-file-select uploader="profilectrl.uploader" id="file">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<input type="button" value="确认更改" class="btn btn-success">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div ng-if="profilectrl.idx == 1">
+					
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- 切图界面 -->
+	<div class="mask_profile cutbox" ng-show="profilectrl.showCutBox">
+		<div class="inner_box" id="inner_box">
+			<a href="javascript:;" class="mask_close" ng-click="profilectrl.showCutBox=false">×</a>
+			<a href="javascript:;" class="btn btn-warning cutBtn" ng-click="profilectrl.cut()">裁切</a>
+			<!-- 这是将要放置我们的自定义指令 -->
+			
+		</div>
+	</div>
+</div>
+ 
